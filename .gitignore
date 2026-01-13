@@ -8,9 +8,10 @@ venv/
 # YOLO outputs
 runs/
 
-# Trained models and checkpoints
+# Dataset / trained models and checkpoints
 *.pt
 *.pth
+data/
 saved_models/
 sam_models/
 final_results/
