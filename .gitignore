@@ -1,5 +1,25 @@
+# Python cache
 __pycache__/
 *.pyc
-.env
-.vscode/
-models/*.pt
+
+# Virtual environment
+venv/
+
+# YOLO outputs
+runs/
+
+# Trained models and checkpoints
+*.pt
+*.pth
+saved_models/
+sam_models/
+final_results/
+
+# OS files
+.DS_Store
+Thumbs.db
+
+datasets/
+results/
+
+

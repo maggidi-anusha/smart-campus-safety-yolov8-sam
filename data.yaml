@@ -1,0 +1,12 @@
+train: data/images/train
+val: data/images/val
+
+nc: 7
+names:
+  - person
+  - helmet
+  - no_helmet
+  - mask
+  - no_mask
+  - gloves
+  - apron
