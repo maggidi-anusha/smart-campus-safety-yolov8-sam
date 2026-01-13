@@ -24,7 +24,7 @@ YOLOv8 is responsible for locating objects in an image, while SAM refines those 
 - **Computer Vision:** OpenCV
 
 ## Project Structure
-
+```
 smart-campus-safety-yolov8-sam/
 ├── scripts/          #Training and inference scripts
 ├── data/             #Dataset configuration
@@ -34,6 +34,7 @@ smart-campus-safety-yolov8-sam/
 ├── requirements.txt
 ├── .gitignore
 └── README.md
+```
 
   
 
