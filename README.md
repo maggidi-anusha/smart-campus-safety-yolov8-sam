@@ -26,14 +26,42 @@ YOLOv8 is responsible for locating objects in an image, while SAM refines those 
 ## Project Structure
 ```
 smart-campus-safety-yolov8-sam/
-├── scripts/          #Training and inference scripts
-├── data/             #Dataset configuration
-├── saved_models/     #Trained YOLOv8 model (not pushed)
-├── sam_models/       #SAM checkpoint (not pushed)
-├── final_results/    #Output images (not pushed)
-├── requirements.txt
-├── .gitignore
-└── README.md
+
+scripts/
+- train.py               : used to train the YOLOv8 model
+- test.py                : used to test the trained model
+- yolo_inference.py      : runs YOLOv8 detection only
+- yolo_sam_inference.py  : runs YOLOv8 with SAM segmentation
+
+data/
+- images/
+  - train/               : training images
+  - val/                 : validation images
+- labels/
+  - train/               : training label files
+  - val/                 : validation label files
+
+samples/
+- sample_construction_site.jpg
+- sample_factory_worker.jpg
+- sample_helmet.jpg
+- sample_helmet_gloves.jpg
+- sample_indoor_safety.jpg
+- sample_multiple_people.jpg
+
+saved_models/
+- best.pt                : trained YOLOv8 model (not pushed to GitHub)
+
+sam_models/
+- sam_vit_b_01ec64.pth   : SAM checkpoint (not pushed to GitHub)
+
+final_results/
+- val_outputs/           : output images after YOLOv8 + SAM inference
+
+requirements.txt         : list of required Python packages
+data.yaml                : dataset configuration file
+.gitignore               : files and folders ignored by Git
+README.md                : project documentation
 ```
 
   
@@ -41,7 +69,7 @@ smart-campus-safety-yolov8-sam/
 ## YOLOv8 Training
 
 YOLOv8 was trained on a custom dataset containing safety-related classes.  
-The trained model (`best_v1.pt`) is stored locally and is not included in this repository due to file size constraints.
+The trained model (`best.pt`) is stored locally and is not included in this repository due to file size constraints.
 
 ## YOLOv8 + SAM Integration
 
@@ -58,6 +86,13 @@ This integration enhances the interpretability of safety violations and protecti
 Sample results are used for evaluation and demonstration purposes.
 
 The system demonstrates effective detection and segmentation under controlled conditions and serves as a strong baseline for further real-time deployment.
+
+## Sample Inference
+
+Raw images placed in the `samples/` folder were used as input for
+YOLOv8 and SAM inference. The generated output images with bounding
+boxes and segmentation masks are saved in `final_results/val_outputs`.
+
 
 
 ## How to Run
